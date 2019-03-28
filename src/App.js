@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import List from "./List";
 
-export default class App extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,12 +26,15 @@ export default class App extends Component {
   render() {
     return (
       <div>
+        <div className="header">Grocery List</div>
         <form className="App" onSubmit = {this.onSubmit}>
           <input value = {this.state.term} onChange = {this.onChange} />
-          <button> Submit </button>
+          <button>Add Item</button>
         </form>
         <List items = {this.state.items}/>
       </div>
     );
   }
 }
+
+export default App;
