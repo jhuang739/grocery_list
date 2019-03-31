@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import List from "./List";
 
-class App extends Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,6 +23,12 @@ class App extends Component {
     });
   }
 
+  deleteItem = indexToDelete => {
+    this.setState(({items}) => ({
+        items: items.filter((list, index) => index !== indexToDelete)
+    }));
+  };
+
   render() {
     return (
       <div>
@@ -32,6 +38,15 @@ class App extends Component {
           <button>Add Item</button>
         </form>
         <List items = {this.state.items}/>
+        {/*
+        <div className="list_content">
+          {this.state.items.map((items, index) => {
+            return <List 
+              items = {this.state.items}
+              deleteItem = {this.deleteItem.bind(this, index)}
+              />
+          })}
+        </div> */}
       </div>
     );
   }
