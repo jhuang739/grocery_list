@@ -6,7 +6,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
+      term: "",
       items: [],
     };
   }
@@ -25,7 +25,7 @@ class App extends React.Component {
 
   deleteItem = indexToDelete => {
     this.setState(({items}) => ({
-        items: items.filter((list, index) => index !== indexToDelete)
+        items: items.filter((_, index) => index !== indexToDelete)
     }));
   };
 
@@ -37,16 +37,15 @@ class App extends React.Component {
           <input value = {this.state.term} onChange = {this.onChange} />
           <button>Add Item</button>
         </form>
-        <List items = {this.state.items}/>
-        {/*
         <div className="list_content">
-          {this.state.items.map((items, index) => {
+          {this.state.items.map((item, index) => {
+            console.log(item, index)
             return <List 
-              items = {this.state.items}
+              item = {item}
               deleteItem = {this.deleteItem.bind(this, index)}
               />
           })}
-        </div> */}
+        </div>
       </div>
     );
   }
