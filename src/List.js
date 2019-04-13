@@ -6,7 +6,7 @@ class List extends React.Component {
     return (
       <div className="list_item">
         <p className="list_text">{this.props.item}</p>
-        <button className="list_delete_button" onClick={this.props.deleteItem}>
+        <button className="delete_button" onClick={this.props.deleteItem}>
           Delete
         </button>
       </div>

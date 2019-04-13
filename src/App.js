@@ -30,12 +30,13 @@ class App extends React.Component {
   };
 
   render() {
+    document.body.style = "background: aliceblue;";
     return (
       <div>
         <div className="header">Grocery List</div>
         <form className="App" onSubmit={this.onSubmit}>
           <input value={this.state.term} onChange={this.onChange} />
-          <button>Add Item</button>
+          <button className="add_button">Add Item</button>
         </form>
         <div className="list_content">
           {this.state.items.map((item, index) => {
