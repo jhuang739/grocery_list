@@ -7,7 +7,7 @@ class List extends React.Component {
       <div className="list_item">
         <p className="list_text">{this.props.item}</p>
         <button className="delete_button" onClick={this.props.deleteItem}>
-          Delete
+          Remove
         </button>
       </div>
     );
